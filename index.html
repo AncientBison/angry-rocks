@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Science Project</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+     </head>
+  <body>
+  <div style="display: inline-block;">
+    <label for="density-of-rock">Density of Rock: </label>
+    <input type="range" min="100" max="50000" value="10000" name="density-of-rock" id="density-of-rock" step="100"/><span id="density-of-rock-display">1000</span>
+    <br/>
+    <label for="density-of-objects">Density of Targets: </label>
+    <input type="range" min="10" max="5000" value="1000" name="density-of-objects" id="density-of-objects" step="10"/><span id="density-of-objects-display">1000</span>
+    <br/>
+    <label for="formation-of-objects">Formation of Targets: </label>
+    <select name="formation-of-objects" id="formation-of-objects">
+      <option value="stack" selected>Stack</option>
+      <option value="pyramid">Pyramid</option>
+    </select>
+  </div>
+  <div style="display: inline-block; margin-left: 2em;">
+    <button id="reload-rock">Reload Rock (r)</button>
+    <br/>
+    <button id="reload-targets">Reset Targets (b)</button>
+    <br/>
+    <button id="opener">What's going on here?</button>
+  </div>
+  <br/>
+    <script src="/node_modules/matter-js/build/matter.min.js" type="text/javascript"></script>
+    <script src="/main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <div id="dialog" title="What's going on here?">
+      <p style="weight: bold">To play:
+        <ul>
+          <li>Click on the rock (the octagon on the left), drag it back, and release.</li>
+          <li>Play with the density slider on the top to change densities.
+          <li>To reload the rock, either click &quotr&quot, or click the button on the top.</li>
+          <li>To reset the targets, either click on the button at the top, or click &quotb&quot.</li>
+        </ul>
+      </p>
+      <p>This simulation demonstrates Newton’s 3 Laws of Motion. The first law - an object at rest stays at rest unless acted on by an external force; an object in motion stays in motion unless acted on by an external force -  is shown by the rock as it travels from the slingshot, moving forward towards the targets, but also falling because of gravity (an external force). The second law - force equal mass times acceleration - is shown in that both higher density rocks (more mass) and rocks pulled back further (more acceleration) have more force, and are able to break through the targets more easily. The third law - when one object exerts a force on a second object, the second object exerts a force on the first that is equal in size and opposite in direction -  is shown in that when the rock hits the targets, they apply an equal and opposite force back towards the rock, which slows the rock until it comes to rest.</p>
+      <p>I would like to thank <a href="https://github.com/liabru/matter-js">matter.js</a> made by <a href="https://github.com/liabru">liabru</a> for making the physics simulation possible, and <a href="https://www.youtube.com/c/TheWonkyDonkeyMan">Craig Smith</a> for the <a href="https://www.youtube.com/watch?v=SDeQT9zCvi4">awesome sound effect when firing the rock.</a></p>
+    </div>
+  </body>
+</html>

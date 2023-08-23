@@ -1,0 +1,9 @@
+html, body {
+  background-color: #000000;
+  color: white;
+  color-scheme: dark;
+}
+
+.bordered {
+  border: 1px solid white;
+}
